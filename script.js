@@ -1,7 +1,6 @@
 const input = document.getElementById("newItem")
 const addBtn = document.getElementById("addBtn")
 const list = document.getElementById("list")
-const item = document.querySelector(".item")
 const msg = document.querySelector("#toastMsg")
 
 
@@ -14,7 +13,7 @@ addBtn.addEventListener("click", (event) => {
 
     if(regexL.test(input.value) && regexS.test(input.value)){
         var html = `        
-        <div class="item">
+        <div class="item" id="item">
             <label class="check" title="Concluir">
                 <input type="checkbox" />
             </label>
@@ -27,12 +26,8 @@ addBtn.addEventListener("click", (event) => {
                 </svg>
             </button>
             </div>
-
     `
-
-
         list.innerHTML += html;
-
         
         
     }else{
@@ -42,4 +37,13 @@ addBtn.addEventListener("click", (event) => {
 
 })
 
+
+list.addEventListener("click", (event) => {
+    event.preventDefault()
+    const trash = document.querySelector(".trash")
+    if(!trash) return
+    
+    const item = trash.closest(".item")
+    if(item) item.remove()
+})
 
