@@ -8,6 +8,105 @@
     <script src="script.js"></script>
 </head>
 <body>
-    
+      <header class="topbar">
+    <div class="brand" aria-label="quicklist">
+      <!-- Ícone estilo quicklist -->
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 7.2c0-.66.54-1.2 1.2-1.2h9.2c.66 0 1.2.54 1.2 1.2s-.54 1.2-1.2 1.2H5.2C4.54 8.4 4 7.86 4 7.2Z" fill="#C7367D"/>
+        <path d="M4 12c0-.66.54-1.2 1.2-1.2h13.6c.66 0 1.2.54 1.2 1.2s-.54 1.2-1.2 1.2H5.2C4.54 13.2 4 12.66 4 12Z" fill="#C7367D" opacity=".9"/>
+        <path d="M4 16.8c0-.66.54-1.2 1.2-1.2h7c.66 0 1.2.54 1.2 1.2s-.54 1.2-1.2 1.2h-7c-.66 0-1.2-.54-1.2-1.2Z" fill="#C7367D" opacity=".8"/>
+      </svg>
+      <span>quicklist</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="container">
+      <a class="back" href="#">
+        <span aria-hidden="true">←</span>
+        <span>Voltar</span>
+      </a>
+
+      <h1>Compras da semana</h1>
+
+      <div class="addRow">
+        <input id="newItem" class="input" type="text" placeholder="Adicione um novo item" />
+        <button id="addBtn" class="btn">Adicionar item</button>
+      </div>
+
+      <div class="list" id="list">
+        <!-- itens iniciais -->
+        <div class="item">
+          <label class="check" title="Concluir">
+            <input type="checkbox" />
+          </label>
+          <div class="label">Pão de forma</div>
+          <button class="trash" title="Remover">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 3h6l1 2h4v2H4V5h4l1-2Z" fill="currentColor" opacity=".6"/>
+              <path d="M7 9h10l-1 12H8L7 9Z" stroke="currentColor" stroke-width="1.6" opacity=".8"/>
+              <path d="M10 12v6M14 12v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="item">
+          <label class="check"><input type="checkbox" /></label>
+          <div class="label">Café preto</div>
+          <button class="trash" title="Remover">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 3h6l1 2h4v2H4V5h4l1-2Z" fill="currentColor" opacity=".6"/>
+              <path d="M7 9h10l-1 12H8L7 9Z" stroke="currentColor" stroke-width="1.6" opacity=".8"/>
+              <path d="M10 12v6M14 12v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="item">
+          <label class="check"><input type="checkbox" /></label>
+          <div class="label">Suco de laranja</div>
+          <button class="trash" title="Remover">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 3h6l1 2h4v2H4V5h4l1-2Z" fill="currentColor" opacity=".6"/>
+              <path d="M7 9h10l-1 12H8L7 9Z" stroke="currentColor" stroke-width="1.6" opacity=".8"/>
+              <path d="M10 12v6M14 12v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="item">
+          <label class="check"><input type="checkbox" /></label>
+          <div class="label">Bolacha</div>
+          <button class="trash" title="Remover">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 3h6l1 2h4v2H4V5h4l1-2Z" fill="currentColor" opacity=".6"/>
+              <path d="M7 9h10l-1 12H8L7 9Z" stroke="currentColor" stroke-width="1.6" opacity=".8"/>
+              <path d="M10 12v6M14 12v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div class="toastWrap" aria-live="polite" aria-atomic="true">
+    <div class="toast" id="toast">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+          <path d="M12 2.5c5.25 0 9.5 4.25 9.5 9.5S17.25 21.5 12 21.5 2.5 17.25 2.5 12 6.75 2.5 12 2.5Z" fill="rgba(255,255,255,.2)"/>
+          <path d="M12 7v6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 16.8h.01" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="msg" id="toastMsg">O item foi removido da lista</div>
+      <button class="close" id="toastClose" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+          <path d="M7 7l10 10M17 7L7 17" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
 </body>
 </html>
